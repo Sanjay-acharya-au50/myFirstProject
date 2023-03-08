@@ -383,6 +383,7 @@ app.get("/home", verifyToken, async (req, res) => {
     const placedStHeadLine = await placedStHeadingLine.findOne({ _id: "6400e2ed504d588d0c16cfa8" })
     // console.log(placedStHeadLine);
     return res.render("index", {
+        //  initialized variable in home route for fetching inside the handlebars(hbs);
         display: display,
         homePho: homePho,
         programs: programs,
@@ -424,7 +425,7 @@ app.post('/userLogin', async (req, res) => {
     if (!user_data) {
         res.status(400)
         //    return res.send("User doesn't exist"); 
-        return res.sendFile(__dirname + "/userExist.html")
+        return res.sendFile(__dirname + "/userDexist.html");
 
     }
     let db_password = user_data.password;
